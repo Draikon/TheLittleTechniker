@@ -84,11 +84,10 @@ tile_data = PoolIntArray( 2162688, 1, 2, 2162689, 1, 2, 2162690, 1, 2, 2162691, 
 [node name="DeadZone" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeadZone"]
-position = Vector2( 664, 663 )
+position = Vector2( 624, 917 )
 shape = SubResource( 3 )
 
 [node name="Lost" parent="." instance=ExtResource( 5 )]
 visible = false
 
 [connection signal="body_entered" from="DeadZone" to="Player" method="_on_DeadZone_body_entered"]
-[connection signal="body_shape_entered" from="DeadZone" to="Player" method="_on_DeadZone_body_shape_entered"]
