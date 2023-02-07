@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 var flower = preload("res://Flower.tscn");
+signal player_dies
 
 var run_speed = 350
 var jump_speed = -1000
@@ -39,3 +40,11 @@ func shoot():
 	self.get_parent().add_child(f);
 	
 	pass
+func _on_DeadZone_body_entered(body):
+	#emit_signal("player_dies")
+	pass # Replace with function body.
+
+
+func _on_DeadZone_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	print("Mann ey!")
+	pass # Replace with function body.
