@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/YouLost.mp3-c0d29e390720ae3d75bf1a967c909370.mp3str"
+
+[deps]
+
+source_file="res://Media/audio/YouLost.mp3"
+dest_files=[ "res://.import/YouLost.mp3-c0d29e390720ae3d75bf1a967c909370.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

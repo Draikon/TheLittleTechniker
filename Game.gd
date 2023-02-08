@@ -8,7 +8,6 @@ func _ready():
 func start_game():
 	self.show()
 	$Camera2D.make_current()
-	Input.is_action_just_pressed('ui_select')
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -19,14 +18,14 @@ func _on_Player_player_dies():
 	# todo: reset viewport
 	$WinLoose/YoureDead.show()
 	$WinLoose.show()
-	$WinLoose/AudioStreamPlayer.playing = true
+	$WinLoose/AudioLoose.playing = true
 	$Player.run_speed = 0
 	$WinLoose.position.x = $Player.position.x / 2
 
 func _on_Player_player_wins():
 	$WinLoose/YouWon.show()
 	$WinLoose.show()
-	$WinLoose/AudioStreamPlayer.playing = true
+	$WinLoose/AudioWin.playing = true
 	$Player.run_speed = 0
 	$WinLoose.position.x = $Player.position.x / 2
 
