@@ -9,6 +9,7 @@ func _ready():
 	pass # Replace with function body.
 
 func start_game():
+	$AudioBackground.playing = true
 	self.show()
 	$Camera2D.make_current()
 
@@ -19,6 +20,7 @@ func _process(delta):
 
 func _on_Player_player_dies():
 	# todo: reset viewport
+	$AudioBackground.playing = false
 	$WinLoose/YoureDead.show()
 	$WinLoose.show()
 	$WinLoose/AudioLoose.playing = true
@@ -26,6 +28,7 @@ func _on_Player_player_dies():
 	$WinLoose.position.x = $Player.position.x / 2
 
 func _on_Player_player_wins():
+	$AudioBackground.playing = false
 	$WinLoose/YouWon.show()
 	$WinLoose.show()
 	$WinLoose/AudioWin.playing = true

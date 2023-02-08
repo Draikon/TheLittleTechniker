@@ -22,5 +22,6 @@ func exit_game():
 	get_tree().quit()
 
 func _on_Button_pressed():
+	$AudioStart.stop()
 	emit_signal("game_start")
 	pass # Replace with function body.
