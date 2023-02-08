@@ -14,6 +14,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$Camera2D.position.x = $Player.position.x
+	$Background.position.x = $Player.position.x
 	#if get_node("Player").
 
 func _on_Player_player_dies():
