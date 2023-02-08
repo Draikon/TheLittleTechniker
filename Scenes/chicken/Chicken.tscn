@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/chicken/rooster-idle.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/chicken/rooster-move.png" type="Texture" id=2]
+[ext_resource path="res://Media/Images/heart.png" type="Texture" id=3]
 
 [sub_resource type="GDScript" id=13]
 script/source = "extends KinematicBody2D
@@ -23,7 +24,13 @@ func _physics_process(delta):
 		velocity.x += direction * 1600 * delta
 	
 	velocity = move_and_slide(velocity, Vector2(0, -1))
+	
 
+func hit():
+	
+	var particles = $Particles2D;
+	if !particles.emitting:
+		particles.emitting = true
 
 func _on_BehaviorTimer_timeout():
 	if $AnimatedSprite.animation == 'idle':
@@ -85,6 +92,7 @@ __meta__ = {
 scale = Vector2( 5, 5 )
 frames = SubResource( 12 )
 animation = "move"
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -95,5 +103,20 @@ shape = SubResource( 5 )
 [node name="BehaviorTimer" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
+
+[node name="Particles2D" type="CPUParticles2D" parent="."]
+position = Vector2( -2, -29 )
+scale = Vector2( 0.6, 0.6 )
+emitting = false
+amount = 80
+one_shot = true
+explosiveness = 1.0
+texture = ExtResource( 3 )
+direction = Vector2( 0, -1 )
+spread = 44.42
+gravity = Vector2( 0, 200 )
+initial_velocity = 449.55
+initial_velocity_random = 0.55
+color = Color( 0.752941, 0.219608, 0.721569, 1 )
 
 [connection signal="timeout" from="BehaviorTimer" to="." method="_on_BehaviorTimer_timeout"]

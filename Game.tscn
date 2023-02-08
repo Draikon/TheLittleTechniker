@@ -97,7 +97,9 @@ position = Vector2( 69, 57 )
 z_index = 1
 
 [node name="BarmerBoy" parent="." instance=ExtResource( 7 )]
+collision_layer = 4
 
 [node name="Start_Menu" parent="." instance=ExtResource( 8 )]
+visible = false
 
 [connection signal="body_entered" from="DeadZone" to="Player" method="_on_DeadZone_body_entered"]
