@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/StrollingRound.mp3-7d161b3c9e619fc591e6559165466575.mp3str"
+
+[deps]
+
+source_file="res://Media/audio/StrollingRound.mp3"
+dest_files=[ "res://.import/StrollingRound.mp3-7d161b3c9e619fc591e6559165466575.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
