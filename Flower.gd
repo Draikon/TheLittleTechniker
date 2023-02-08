@@ -11,12 +11,12 @@ func _process(delta):
 	var bodies = self.get_colliding_bodies()
 	
 	if bodies.size() > 0:
-		print_debug(bodies[0].name)
-		if bodies[0].name == "Chicken":
+		print_debug(bodies[0].get_class())
+		if bodies[0].has_method("hit"):
 			bodies[0].hit()
 		
 		destroy()
-		
+
 
 func destroy(): 
 	self.get_parent().remove_child(self)

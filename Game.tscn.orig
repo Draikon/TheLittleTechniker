@@ -3,14 +3,14 @@
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/tiles/TileScene.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/coins/Coin.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/chicken/Chicken.tscn" type="PackedScene" id=4]
 [ext_resource path="res://GameOver.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Game.gd" type="Script" id=6]
 [ext_resource path="res://BarmerBoy.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/background/Background.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Spawner.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 42, 160.5 )
+extents = Vector2( 41, 160.75 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 1063.38, 93 )
@@ -33,8 +33,8 @@ shape = SubResource( 4 )
 position = Vector2( 624, 917 )
 shape = SubResource( 3 )
 
-[node name="Lost" parent="." instance=ExtResource( 5 )]
-visible = false
+[node name="Chicken" parent="." instance=ExtResource( 4 )]
+position = Vector2( 516, 242 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 52, 422 )
@@ -42,6 +42,7 @@ z_index = 1
 collision_mask = 33
 
 [node name="BarmerBoy" parent="." instance=ExtResource( 7 )]
+collision_layer = 4
 
 [node name="Coins" type="Node2D" parent="."]
 
@@ -59,31 +60,16 @@ position = Vector2( 182, 401 )
 
 [node name="Start_Menu" parent="." instance=ExtResource( 8 )]
 visible = false
+<<<<<<< HEAD
+=======
 
 [node name="TileScene" parent="." instance=ExtResource( 2 )]
 
 [node name="WinLoose" parent="." instance=ExtResource( 5 )]
 visible = false
+>>>>>>> a4e4c52b4c5f86e016ba5b13eaadb48ab00565dc
 
-[node name="Spawner" parent="." instance=ExtResource( 9 )]
-position = Vector2( 1023, 262 )
-
-[node name="Spawner2" parent="." instance=ExtResource( 9 )]
-position = Vector2( 466, 484 )
-
-[node name="AudioBackground" type="AudioStreamPlayer" parent="."]
-
-[node name="CoinLabel" type="Label" parent="."]
-margin_left = 7.0
-margin_top = 8.0
-margin_right = 15.0
-margin_bottom = 22.0
-rect_scale = Vector2( 3, 3 )
-text = "0"
-
-[connection signal="visibility_changed" from="." to="." method="_on_Game_visibility_changed"]
 [connection signal="body_entered" from="WinZone" to="Player" method="_on_WinZone_body_entered"]
 [connection signal="body_entered" from="DeadZone" to="Player" method="_on_DeadZone_body_entered"]
-[connection signal="coins_increased" from="Player" to="." method="_on_Player_coins_increased"]
 [connection signal="player_dies" from="Player" to="." method="_on_Player_player_dies"]
 [connection signal="player_wins" from="Player" to="." method="_on_Player_player_wins"]

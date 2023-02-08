@@ -81,7 +81,7 @@ collision_mask = 7
 script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 324.25, 126.25 )
+position = Vector2( -1.25003, -7.75 )
 scale = Vector2( 3.59375, 3.90625 )
 frames = SubResource( 7 )
 animation = "idle"
@@ -89,7 +89,7 @@ frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 324, 134.25 )
+position = Vector2( -1.5, 0.25 )
 shape = SubResource( 8 )
 
 [node name="BehaviorTimer" type="Timer" parent="."]
@@ -101,13 +101,13 @@ collision_layer = 16
 collision_mask = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="top_checker"]
-position = Vector2( 324, 103 )
+position = Vector2( -1.5, -31 )
 shape = SubResource( 12 )
 
 [node name="side_checker" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="side_checker"]
-position = Vector2( 324, 134.5 )
+position = Vector2( -1.5, 0.5 )
 shape = SubResource( 16 )
 
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
