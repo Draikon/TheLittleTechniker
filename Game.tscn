@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/tiles/TileScene.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/coins/Coin.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Media/SnesItalic-1G9Be.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://GameOver.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Game.gd" type="Script" id=6]
 [ext_resource path="res://BarmerBoy.tscn" type="PackedScene" id=7]
@@ -14,6 +15,13 @@ extents = Vector2( 42, 160.5 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 1063.38, 93 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 75
+font_data = ExtResource( 4 )
+
+[sub_resource type="Theme" id=6]
+default_font = SubResource( 5 )
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 6 )
@@ -75,11 +83,11 @@ position = Vector2( 466, 484 )
 [node name="AudioBackground" type="AudioStreamPlayer" parent="."]
 
 [node name="CoinLabel" type="Label" parent="."]
-margin_left = 7.0
-margin_top = 8.0
-margin_right = 15.0
-margin_bottom = 22.0
-rect_scale = Vector2( 3, 3 )
+margin_left = 15.0
+margin_top = 20.0
+margin_right = 39.0
+margin_bottom = 89.0
+theme = SubResource( 6 )
 text = "0"
 
 [connection signal="visibility_changed" from="." to="." method="_on_Game_visibility_changed"]
