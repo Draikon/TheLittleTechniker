@@ -23,7 +23,7 @@ margin_top = 184.0
 margin_right = 77.0
 margin_bottom = 198.0
 rect_scale = Vector2( 15, 15 )
-text = "You Won!"
+text = "YOU WON!"
 uppercase = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
