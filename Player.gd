@@ -46,8 +46,6 @@ func shoot():
 	
 	self.get_parent().add_child(f);
 	
-	pass
-	
 func _on_DeadZone_body_entered(body):
 	if self == body:
 		emit_signal("player_dies")

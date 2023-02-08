@@ -98,4 +98,3 @@ z_index = 1
 [node name="BarmerBoy" parent="." instance=ExtResource( 7 )]
 
 [connection signal="body_entered" from="DeadZone" to="Player" method="_on_DeadZone_body_entered"]
-[connection signal="player_dies" from="Player" to="." method="_on_Player_player_dies"]
