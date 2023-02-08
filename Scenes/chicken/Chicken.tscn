@@ -12,11 +12,6 @@ var gravity = 500
 var velocity = Vector2()
 var direction = -1
 
-signal chicken_hit
-
-func _ready():
-	self.connect(\"chicken_hit\", self.get_parent().get_node(\"Player\"), \"coin_collected\")
-
 func _physics_process(delta):
 	velocity.y += gravity * delta
 	velocity.x = 0
@@ -32,8 +27,6 @@ func _physics_process(delta):
 	
 
 func hit():
-	
-	emit_signal(\"chicken_hit\")
 	
 	var particles = $Particles2D;
 	if !particles.emitting:
@@ -113,7 +106,7 @@ autostart = true
 position = Vector2( -2, -29 )
 scale = Vector2( 0.6, 0.6 )
 emitting = false
-amount = 80
+amount = 200
 one_shot = true
 explosiveness = 1.0
 texture = ExtResource( 3 )
