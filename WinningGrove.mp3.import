@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/WinningGrove.mp3-6ccd627d58baa639546ce43de817616d.mp3str"
+
+[deps]
+
+source_file="res://WinningGrove.mp3"
+dest_files=[ "res://.import/WinningGrove.mp3-6ccd627d58baa639546ce43de817616d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
