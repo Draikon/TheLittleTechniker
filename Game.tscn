@@ -9,10 +9,10 @@
 [ext_resource path="res://Scenes/background/Background.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 28, 22.5 )
+extents = Vector2( 572.5, 87.5 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 42, 160.5 )
+extents = Vector2( 44.5, 152.5 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 1063.38, 93 )
@@ -41,7 +41,7 @@ shape = SubResource( 1 )
 [node name="WinZone" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WinZone"]
-position = Vector2( 1165, 367 )
+position = Vector2( 1131, 361 )
 shape = SubResource( 4 )
 
 [node name="DeadZone" type="Area2D" parent="."]
@@ -59,9 +59,6 @@ z_index = 1
 
 [node name="BarmerBoy" parent="." instance=ExtResource( 7 )]
 
-[node name="Start_Menu" parent="." instance=ExtResource( 8 )]
-visible = false
-
 [node name="Background" parent="." instance=ExtResource( 8 )]
 position = Vector2( 177, 308 )
 scale = Vector2( 2, 2 )
@@ -73,4 +70,3 @@ visible = false
 [connection signal="body_entered" from="WinZone" to="Player" method="_on_WinZone_body_entered"]
 [connection signal="body_entered" from="DeadZone" to="Player" method="_on_DeadZone_body_entered"]
 [connection signal="player_dies" from="Player" to="." method="_on_Player_player_dies"]
-[connection signal="player_wins" from="Player" to="." method="_on_Player_player_wins"]
