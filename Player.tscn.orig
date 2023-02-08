@@ -4,8 +4,8 @@
 [ext_resource path="res://hero.png" type="Texture" id=2]
 [ext_resource path="res://Media/audio/collectcoin-6075.mp3" type="AudioStream" id=3]
 
-[sub_resource type="CapsuleShape2D" id=6]
-radius = 21.5
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 17, 28 )
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
@@ -45,7 +45,11 @@ shape = SubResource( 6 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 3.9375, 3.9375 )
 frames = SubResource( 5 )
+<<<<<<< HEAD
 frame = 2
+=======
+frame = 1
+>>>>>>> 9e0f21dd3e03d9b71edac31d93076b3d2c00a0b0
 playing = true
 
 [node name="CoinSound" type="AudioStreamPlayer" parent="."]
