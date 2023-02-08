@@ -74,4 +74,5 @@ func playerDies():
 	emit_signal("player_dies")	
 
 func coin_collected():
+	$CoinSound.play()
 	coins += 1
