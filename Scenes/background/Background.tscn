@@ -5,8 +5,9 @@
 [node name="Background" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = -539.0
-margin_top = -360.0
-margin_right = 539.0
-margin_bottom = 360.0
+margin_left = -9999.0
+margin_top = -9999.0
+margin_right = -8921.0
+margin_bottom = -9279.0
+rect_scale = Vector2( 1000, 1000 )
 texture = ExtResource( 1 )
