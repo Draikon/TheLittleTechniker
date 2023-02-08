@@ -1,27 +1,22 @@
-extends Node2D
+extends Area2D
 
+signal coin_collected
 
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
 
-signal game_start
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$ButtonExit.connect("button_down", self, "exit_game")	
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
-#	pass
+	
 
-func exit_game():
-	get_tree().quit()
 
-func _on_Button_pressed():
-	$AudioStart.stop()
-	emit_signal("game_start")
-	pass # Replace with function body.
+func _on_Coin_body_entered(body):
+	emit_signal("coin_collected")
+	queue_free()

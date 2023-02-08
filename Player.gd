@@ -12,6 +12,8 @@ var gravity = 2500
 
 var velocity = Vector2()
 
+var coins = 0
+
 func _ready():
 	$AnimatedSprite.animation = "default"
 
@@ -27,9 +29,11 @@ func get_input():
 	if right:
 		velocity.x += run_speed
 		$AnimatedSprite.flip_h = true
+		facing = "right"
 	if left:
 		velocity.x -= run_speed
 		$AnimatedSprite.flip_h = false
+		facing = "left"
 	if shoot:
 		shoot()
 
@@ -40,20 +44,34 @@ func _physics_process(delta):
 
 func shoot():
 	var f = flower.instance();
-	f.position.x = self.position.x + 50
-	f.position.y = self.position.y - 50
-	f.linear_velocity =  Vector2(300, -300)
-	f.gravity_scale = 10
+	var direction = 0
+	if facing == "left":
+		direction = -1
+	
+	if facing == "right":
+		direction = 1
+	
+	f.position.x = self.position.x
+	f.position.y = self.position.y
+	
+	var v = Vector2(0, -600);
+	v = v.rotated(deg2rad(45 * direction));
+	f.linear_velocity = v;
 	
 	self.get_parent().add_child(f);
 	
 func _on_DeadZone_body_entered(body):
 	if self == body:
-		emit_signal("player_dies")
+		playerDies()
 	pass # Replace with function body.
 	
 func _on_WinZone_body_entered(body):
 	if self == body:
 		emit_signal("player_wins")
 	pass # Replace with function body.
+	
+func playerDies():
+	emit_signal("player_dies")	
 
+func coin_collected():
+	coins += 1
