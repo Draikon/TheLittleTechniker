@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Tileset1.tres" type="TileSet" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://GameOver.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Game.gd" type="Script" id=6]
 [ext_resource path="res://BarmerBoy.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/coins/Coin.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/background/Background.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -89,4 +88,3 @@ visible = false
 [connection signal="body_entered" from="WinZone" to="Player" method="_on_WinZone_body_entered"]
 [connection signal="body_entered" from="DeadZone" to="Player" method="_on_DeadZone_body_entered"]
 [connection signal="player_dies" from="Player" to="." method="_on_Player_player_dies"]
-[connection signal="player_wins" from="Player" to="." method="_on_Player_player_wins"]
