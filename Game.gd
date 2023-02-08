@@ -8,6 +8,7 @@ func _ready():
 func start_game():
 	self.show()
 	$Camera2D.make_current()
+	Input.is_action_just_pressed('ui_select')
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

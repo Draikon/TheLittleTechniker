@@ -20,3 +20,9 @@ func _on_Start_Menu_game_start():
 	$Start_Menu.hide()
 	$Game.start_game()
 	pass # Replace with function body.
+
+
+func _input(event):
+	if event is InputEventKey and event.pressed:
+		if event.scancode == KEY_ESCAPE:
+			get_tree().quit()

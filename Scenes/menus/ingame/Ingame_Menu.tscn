@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Tileset1.tres" type="TileSet" id=1]
+
+[node name="Ingame_Menu" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+format = 1
+
+[node name="Button" type="Button" parent="TileMap"]
+margin_left = 443.0
+margin_top = 299.0
+margin_right = 557.0
+margin_bottom = 339.0
+text = "Beenden"

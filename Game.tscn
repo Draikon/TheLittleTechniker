@@ -9,10 +9,10 @@
 [ext_resource path="res://Scenes/background/Background.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 28, 22.5 )
+extents = Vector2( 572.5, 87.5 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 42, 160.5 )
+extents = Vector2( 44.5, 152.5 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 1063.38, 93 )
