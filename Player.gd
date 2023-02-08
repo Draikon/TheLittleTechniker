@@ -37,5 +37,4 @@ func shoot():
 	f.gravity_scale = 10
 	
 	self.get_parent().add_child(f);
-	
-	pass
+
