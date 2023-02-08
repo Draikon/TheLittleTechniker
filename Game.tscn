@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Tileset1.tres" type="TileSet" id=2]
@@ -6,11 +6,10 @@
 [ext_resource path="res://GameOver.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Game.gd" type="Script" id=6]
 [ext_resource path="res://BarmerBoy.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/menus/start/Start_Menu.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/background/Background.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 572.5, 87.5 )
+extents = Vector2( 28, 22.5 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 42, 160.5 )
@@ -51,9 +50,6 @@ shape = SubResource( 4 )
 position = Vector2( 624, 917 )
 shape = SubResource( 3 )
 
-[node name="WinLoose" parent="." instance=ExtResource( 5 )]
-visible = false
-
 [node name="Chicken" parent="." instance=ExtResource( 4 )]
 position = Vector2( 516, 242 )
 
@@ -63,18 +59,18 @@ z_index = 1
 
 [node name="BarmerBoy" parent="." instance=ExtResource( 7 )]
 
-
 [node name="Start_Menu" parent="." instance=ExtResource( 8 )]
 visible = false
-
-[connection signal="body_entered" from="WinZone" to="Player" method="_on_WinZone_body_entered"]
 
 [node name="Background" parent="." instance=ExtResource( 8 )]
 position = Vector2( 177, 308 )
 scale = Vector2( 2, 2 )
 z_index = -4
 
+[node name="WinLoose" parent="." instance=ExtResource( 5 )]
+visible = false
 
+[connection signal="body_entered" from="WinZone" to="Player" method="_on_WinZone_body_entered"]
 [connection signal="body_entered" from="DeadZone" to="Player" method="_on_DeadZone_body_entered"]
 [connection signal="player_dies" from="Player" to="." method="_on_Player_player_dies"]
 [connection signal="player_wins" from="Player" to="." method="_on_Player_player_wins"]
