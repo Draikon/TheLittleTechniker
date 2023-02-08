@@ -13,6 +13,7 @@ var gravity = 2500
 var velocity = Vector2()
 
 var coins = 0
+signal coins_increased
 
 func _ready():
 	$AnimatedSprite.animation = "default"
@@ -76,3 +77,4 @@ func playerDies():
 func coin_collected():
 	$CoinSound.play()
 	coins += 1
+	emit_signal("coins_increased", coins)

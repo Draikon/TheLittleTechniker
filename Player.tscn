@@ -4,8 +4,8 @@
 [ext_resource path="res://hero.png" type="Texture" id=2]
 [ext_resource path="res://Media/audio/collectcoin-6075.mp3" type="AudioStream" id=3]
 
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 17, 28 )
+[sub_resource type="CapsuleShape2D" id=6]
+radius = 21.5
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4

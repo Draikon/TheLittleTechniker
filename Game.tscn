@@ -72,8 +72,17 @@ visible = false
 [node name="AudioBackground" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
 
+[node name="CoinLabel" type="Label" parent="."]
+margin_left = 7.0
+margin_top = 8.0
+margin_right = 15.0
+margin_bottom = 22.0
+rect_scale = Vector2( 3, 3 )
+text = "0"
+
 [connection signal="visibility_changed" from="." to="." method="_on_Game_visibility_changed"]
 [connection signal="body_entered" from="WinZone" to="Player" method="_on_WinZone_body_entered"]
 [connection signal="body_entered" from="DeadZone" to="Player" method="_on_DeadZone_body_entered"]
+[connection signal="coins_increased" from="Player" to="." method="_on_Player_coins_increased"]
 [connection signal="player_dies" from="Player" to="." method="_on_Player_player_dies"]
 [connection signal="player_wins" from="Player" to="." method="_on_Player_player_wins"]

@@ -16,6 +16,7 @@ func start_game():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$Camera2D.position.x = $Player.position.x
+	$CoinLabel.rect_position.x = $Player.position.x -480
 	#if get_node("Player").
 
 func _on_Player_player_dies():
@@ -39,3 +40,7 @@ func _on_Player_player_wins():
 func _on_Game_visibility_changed():
 	start_game()
 	pass # Replace with function body.
+
+
+func _on_Player_coins_increased(coins):
+	$CoinLabel.text = str(coins)
