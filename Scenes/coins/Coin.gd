@@ -17,6 +17,6 @@ func _ready():
 	
 
 
-func _on_Coin_body_entered(body):
+func _on_Coin_body_entered(_body):
 	emit_signal("coin_collected")
 	queue_free()
