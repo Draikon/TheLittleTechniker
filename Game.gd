@@ -29,3 +29,8 @@ func _on_Player_player_wins():
 	$WinLoose/AudioStreamPlayer.playing = true
 	$Player.run_speed = 0
 	$WinLoose.position.x = $Player.position.x / 2
+
+
+func _on_Game_visibility_changed():
+	start_game()
+	pass # Replace with function body.

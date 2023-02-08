@@ -68,6 +68,7 @@ visible = false
 [node name="WinLoose" parent="." instance=ExtResource( 5 )]
 visible = false
 
+[connection signal="visibility_changed" from="." to="." method="_on_Game_visibility_changed"]
 [connection signal="body_entered" from="WinZone" to="Player" method="_on_WinZone_body_entered"]
 [connection signal="body_entered" from="DeadZone" to="Player" method="_on_DeadZone_body_entered"]
 [connection signal="player_dies" from="Player" to="." method="_on_Player_player_dies"]
