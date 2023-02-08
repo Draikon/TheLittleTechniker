@@ -3,6 +3,9 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var coins = get_tree().get_nodes_in_group("coins")
+	for coin in coins:  
+		coin.connect("coin_collected", $Player, "coin_collected")
 	pass # Replace with function body.
 
 func start_game():

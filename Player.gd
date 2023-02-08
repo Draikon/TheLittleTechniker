@@ -12,6 +12,8 @@ var gravity = 2500
 
 var velocity = Vector2()
 
+var coins = 0
+
 func _ready():
 	$AnimatedSprite.animation = "default"
 
@@ -71,3 +73,5 @@ func _on_WinZone_body_entered(body):
 func playerDies():
 	emit_signal("player_dies")	
 
+func coin_collected():
+	coins += 1
