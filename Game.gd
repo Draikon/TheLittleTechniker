@@ -25,7 +25,7 @@ func _on_Player_player_dies():
 	$WinLoose.show()
 	$WinLoose/AudioLoose.playing = true
 	$Player.run_speed = 0
-	$WinLoose.position.x = $Player.position.x / 2
+	$WinLoose.position.x = $Player.position.x / 2 - 500
 
 func _on_Player_player_wins():
 	$AudioBackground.playing = false
@@ -33,7 +33,7 @@ func _on_Player_player_wins():
 	$WinLoose.show()
 	$WinLoose/AudioWin.playing = true
 	$Player.run_speed = 0
-	$WinLoose.position.x = $Player.position.x / 2
+	$WinLoose.position.x = $Player.position.x / 2 + 250
 
 
 func _on_Game_visibility_changed():
