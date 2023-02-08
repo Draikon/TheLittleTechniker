@@ -44,10 +44,10 @@ z_index = 1
 [node name="Start_Menu" parent="." instance=ExtResource( 8 )]
 visible = false
 
+[node name="TileScene" parent="." instance=ExtResource( 2 )]
+
 [node name="WinLoose" parent="." instance=ExtResource( 5 )]
 visible = false
-
-[node name="TileScene" parent="." instance=ExtResource( 2 )]
 
 [connection signal="body_entered" from="WinZone" to="Player" method="_on_WinZone_body_entered"]
 [connection signal="body_entered" from="DeadZone" to="Player" method="_on_DeadZone_body_entered"]
