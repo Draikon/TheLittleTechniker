@@ -61,4 +61,3 @@ func _on_WinZone_body_entered(body):
 
 func coin_collected():
 	coins += 1
-	print(coins)

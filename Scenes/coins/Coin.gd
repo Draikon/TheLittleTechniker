@@ -19,5 +19,4 @@ func _ready():
 
 func _on_Coin_body_entered(body):
 	emit_signal("coin_collected")
-	print('coin collision detected')
 	queue_free()
