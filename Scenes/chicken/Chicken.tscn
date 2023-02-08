@@ -11,21 +11,6 @@ var gravity = 500
 var velocity = Vector2()
 var direction = -1
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = \"text\"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
 func _physics_process(delta):
 	velocity.y += gravity * delta
 	velocity.x = 0
@@ -100,7 +85,6 @@ __meta__ = {
 scale = Vector2( 5, 5 )
 frames = SubResource( 12 )
 animation = "move"
-frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
