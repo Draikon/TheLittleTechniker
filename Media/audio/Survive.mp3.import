@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Survive.mp3-92a413aaf229309d05c1e381006533d8.mp3str"
+
+[deps]
+
+source_file="res://Media/audio/Survive.mp3"
+dest_files=[ "res://.import/Survive.mp3-92a413aaf229309d05c1e381006533d8.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

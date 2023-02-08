@@ -10,7 +10,7 @@
 [ext_resource path="res://Scenes/background/Background.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 41, 160.75 )
+extents = Vector2( 42, 160.5 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 1063.38, 93 )
@@ -32,6 +32,9 @@ shape = SubResource( 4 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeadZone"]
 position = Vector2( 624, 917 )
 shape = SubResource( 3 )
+
+[node name="Lost" parent="." instance=ExtResource( 5 )]
+visible = false
 
 [node name="Chicken" parent="." instance=ExtResource( 4 )]
 position = Vector2( 516, 480 )
@@ -65,6 +68,7 @@ visible = false
 [node name="WinLoose" parent="." instance=ExtResource( 5 )]
 visible = false
 
+[connection signal="visibility_changed" from="." to="." method="_on_Game_visibility_changed"]
 [connection signal="body_entered" from="WinZone" to="Player" method="_on_WinZone_body_entered"]
 [connection signal="body_entered" from="DeadZone" to="Player" method="_on_DeadZone_body_entered"]
 [connection signal="player_dies" from="Player" to="." method="_on_Player_player_dies"]

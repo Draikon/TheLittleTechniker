@@ -33,9 +33,21 @@ func _physics_process(delta):
 	
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 
+func _on_top_checker_body_entered(body):
+	$AnimatedSprite.animation = 'platt'
 
 func _on_BehaviorTimer_timeout():
 	if $AnimatedSprite.animation == 'idle':
 		$AnimatedSprite.animation = 'move'
 	elif $AnimatedSprite.animation == 'move':
 		$AnimatedSprite.animation = 'idle'
+
+func _on_AnimatedSprite_animation_finished():
+	if ($AnimatedSprite.animation == 'platt'):
+		$AnimatedSprite.stop()
+		hide()
+		queue_free()
+
+func _on_side_checker_body_entered(body):
+	if (body.name == 'Player' && $AnimatedSprite.animation != 'platt'):
+		body.playerDies()
