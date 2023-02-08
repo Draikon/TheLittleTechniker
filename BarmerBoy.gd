@@ -48,3 +48,6 @@ func _on_AnimatedSprite_animation_finished():
 		hide()
 		queue_free()
 
+func _on_side_checker_body_entered(body):
+	if (body.name == 'Player'):
+		body.playerDies()

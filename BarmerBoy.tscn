@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://BarmerBoy.gd" type="Script" id=1]
 [ext_resource path="res://barmerboy.png" type="Texture" id=2]
@@ -72,6 +72,9 @@ extents = Vector2( 22, 25.25 )
 [sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 18.5, 4 )
 
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 23, 25.5 )
+
 [node name="BarmerBoy" type="KinematicBody2D"]
 collision_layer = 5
 collision_mask = 7
@@ -101,6 +104,13 @@ collision_mask = 10
 position = Vector2( 324, 103 )
 shape = SubResource( 12 )
 
+[node name="side_checker" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="side_checker"]
+position = Vector2( 324, 134.5 )
+shape = SubResource( 16 )
+
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="timeout" from="BehaviorTimer" to="." method="_on_BehaviorTimer_timeout"]
 [connection signal="body_entered" from="top_checker" to="." method="_on_top_checker_body_entered"]
+[connection signal="body_entered" from="side_checker" to="." method="_on_side_checker_body_entered"]

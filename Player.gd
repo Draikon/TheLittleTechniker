@@ -49,11 +49,14 @@ func shoot():
 	
 func _on_DeadZone_body_entered(body):
 	if self == body:
-		emit_signal("player_dies")
+		playerDies()
 	pass # Replace with function body.
 	
 func _on_WinZone_body_entered(body):
 	if self == body:
 		emit_signal("player_wins")
 	pass # Replace with function body.
+	
+func playerDies():
+	emit_signal("player_dies")	
 
