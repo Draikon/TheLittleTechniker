@@ -1,19 +1,30 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://WinningGrove.mp3" type="AudioStream" id=1]
+[ext_resource path="res://Media/audio/WinningGrove.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Button.gd" type="Script" id=2]
 
-[node name="Node2D" type="Node2D"]
+[node name="WinLoose" type="Node2D"]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="YoureDead" type="Label" parent="."]
+visible = false
 margin_left = 9.0
 margin_top = 184.0
 margin_right = 77.0
 margin_bottom = 198.0
 rect_scale = Vector2( 15, 15 )
 text = "YOU LOST!"
+
+[node name="YouWon" type="Label" parent="."]
+visible = false
+margin_left = 9.0
+margin_top = 184.0
+margin_right = 77.0
+margin_bottom = 198.0
+rect_scale = Vector2( 15, 15 )
+text = "YOU WON!"
+uppercase = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )

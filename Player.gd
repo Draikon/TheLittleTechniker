@@ -4,6 +4,7 @@ var facing = "idle" # or left or right
 
 var flower = preload("res://Flower.tscn");
 signal player_dies
+signal player_wins
 
 var run_speed = 350
 var jump_speed = -1000
@@ -62,5 +63,8 @@ func _on_DeadZone_body_entered(body):
 		emit_signal("player_dies")
 	pass # Replace with function body.
 	
-
+func _on_WinZone_body_entered(body):
+	if self == body:
+		emit_signal("player_wins")
+	pass # Replace with function body.
 

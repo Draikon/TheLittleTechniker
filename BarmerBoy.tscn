@@ -50,6 +50,7 @@ animations = [ {
 extents = Vector2( 21, 28.5 )
 
 [node name="BarmerBoy" type="KinematicBody2D"]
+collision_layer = 4
 script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
@@ -57,7 +58,6 @@ position = Vector2( 324.25, 126.25 )
 scale = Vector2( 3.59375, 3.90625 )
 frames = SubResource( 7 )
 animation = "idle"
-frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -1,4 +1,4 @@
-extends Camera2D
+extends Node
 
 
 # Declare member variables here. Examples:
@@ -8,10 +8,21 @@ extends Camera2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#make_current()
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func _on_Start_Menu_game_start():
+	$Start_Menu.hide()
+	$Game.start_game()
+	pass # Replace with function body.
+
+
+func _input(event):
+	if event is InputEventKey and event.pressed:
+		if event.scancode == KEY_ESCAPE:
+			get_tree().quit()
