@@ -4,7 +4,7 @@
 [ext_resource path="res://hero.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 31.5, 31.5 )
+extents = Vector2( 22.5, 29.25 )
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
@@ -30,9 +30,15 @@ animations = [ {
 } ]
 
 [node name="Player" type="KinematicBody2D"]
+position = Vector2( 543, 359 )
+collision_layer = 2
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 1.5, 2.25 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
