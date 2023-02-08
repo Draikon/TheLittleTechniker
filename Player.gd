@@ -1,12 +1,18 @@
 extends KinematicBody2D
 
+var facing = "idle" # or left or right
+
 var flower = preload("res://Flower.tscn");
+signal player_dies
 
 var run_speed = 350
 var jump_speed = -1000
 var gravity = 2500
 
 var velocity = Vector2()
+
+func _ready():
+	$AnimatedSprite.animation = "default"
 
 func get_input():
 	velocity.x = 0
@@ -19,8 +25,10 @@ func get_input():
 		velocity.y = jump_speed
 	if right:
 		velocity.x += run_speed
+		$AnimatedSprite.flip_h = true
 	if left:
 		velocity.x -= run_speed
+		$AnimatedSprite.flip_h = false
 	if shoot:
 		shoot()
 
@@ -37,4 +45,11 @@ func shoot():
 	f.gravity_scale = 10
 	
 	self.get_parent().add_child(f);
+	
+func _on_DeadZone_body_entered(body):
+	if self == body:
+		emit_signal("player_dies")
+	pass # Replace with function body.
+	
+
 
