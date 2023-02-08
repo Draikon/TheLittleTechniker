@@ -1,5 +1,6 @@
 extends Area2D
 
+signal coin_collected
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -17,4 +18,5 @@ func _ready():
 
 
 func _on_Coin_body_entered(_body):
-		hide()
+	emit_signal("coin_collected")
+	queue_free()

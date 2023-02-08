@@ -54,7 +54,7 @@ animations = [ {
 "speed": 8.0
 } ]
 
-[node name="Coin" type="Area2D"]
+[node name="Coin" type="Area2D" groups=["coins"]]
 scale = Vector2( 0.3, 0.3 )
 collision_layer = 32
 collision_mask = 0
@@ -63,8 +63,9 @@ script = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="." groups=["coins"]]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 10 )
+frame = 2
 playing = true
 
 [connection signal="body_entered" from="." to="." method="_on_Coin_body_entered"]
