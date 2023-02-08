@@ -22,21 +22,21 @@ func _process(delta):
 func _on_Player_player_dies():
 	# todo: reset viewport
 	$AudioBackground.playing = false
-	$WinLoose/YoureDead.show()
-	$WinLoose.show()
-	$WinLoose/AudioLoose.playing = true
+	$Camera2D/WinLoose/YoureDead.show()
+	$Camera2D/WinLoose.show()
+	$Camera2D/WinLoose/AudioLoose.playing = true
 	$Player.run_speed = 0
 	$Player.jump_speed = 0
-	$WinLoose.position.x = $Player.position.x / 2 - 500
+	#$Camera2D/WinLoose.position.x = $Player.position.x / 2 - 500
 
 func _on_Player_player_wins():
 	$AudioBackground.playing = false
-	$WinLoose/YouWon.show()
-	$WinLoose.show()
-	$WinLoose/AudioWin.playing = true
+	$Camera2D/WinLoose/YouWon.show()
+	$Camera2D/WinLoose.show()
+	$Camera2D/WinLoose/AudioWin.playing = true
 	$Player.run_speed = 0
 	$Player.jump_speed = 0
-	$WinLoose.position.x = $Player.position.x / 2 + 250
+	#$Camera2D/WinLoose.position.x = $Player.position.x / 2 + 250
 
 
 func _on_Game_visibility_changed():

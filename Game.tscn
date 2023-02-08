@@ -21,6 +21,10 @@ script = ExtResource( 6 )
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 512, 299 )
 
+[node name="WinLoose" parent="Camera2D" instance=ExtResource( 5 )]
+visible = false
+position = Vector2( -512, -299 )
+
 [node name="WinZone" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WinZone"]
@@ -61,9 +65,6 @@ position = Vector2( 182, 401 )
 visible = false
 
 [node name="TileScene" parent="." instance=ExtResource( 2 )]
-
-[node name="WinLoose" parent="." instance=ExtResource( 5 )]
-visible = false
 
 [node name="Spawner" parent="." instance=ExtResource( 9 )]
 position = Vector2( 1023, 262 )
