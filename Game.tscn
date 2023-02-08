@@ -34,7 +34,7 @@ position = Vector2( 624, 917 )
 shape = SubResource( 3 )
 
 [node name="Chicken" parent="." instance=ExtResource( 4 )]
-position = Vector2( 516, 242 )
+position = Vector2( 516, 480 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 52, 422 )
@@ -69,3 +69,5 @@ visible = false
 [connection signal="body_entered" from="DeadZone" to="Player" method="_on_DeadZone_body_entered"]
 [connection signal="player_dies" from="Player" to="." method="_on_Player_player_dies"]
 [connection signal="player_wins" from="Player" to="." method="_on_Player_player_wins"]
+[connection signal="coin_collected" from="Coins/Coin2" to="." method="_on_Coin2_coin_collected"]
+[connection signal="coin_collected" from="Coins/Coin2" to="Player" method="_on_Coin2_coin_collected"]

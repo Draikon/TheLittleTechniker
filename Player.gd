@@ -12,6 +12,8 @@ var gravity = 2500
 
 var velocity = Vector2()
 
+var coins = 0
+
 func _ready():
 	$AnimatedSprite.animation = "default"
 
@@ -57,3 +59,6 @@ func _on_WinZone_body_entered(body):
 		emit_signal("player_wins")
 	pass # Replace with function body.
 
+func coin_collected():
+	coins += 1
+	print(coins)
