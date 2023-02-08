@@ -16,5 +16,16 @@ func _process(delta):
 	#if get_node("Player").
 
 func _on_Player_player_dies():
-	$Lost.show()
-	$Lost/AudioStreamPlayer.playing = true
+	# todo: reset viewport
+	$WinLoose/YoureDead.show()
+	$WinLoose.show()
+	$WinLoose/AudioStreamPlayer.playing = true
+	$Player.run_speed = 0
+	$WinLoose.position.x = $Player.position.x / 2
+
+func _on_Player_player_wins():
+	$WinLoose/YouWon.show()
+	$WinLoose.show()
+	$WinLoose/AudioStreamPlayer.playing = true
+	$Player.run_speed = 0
+	$WinLoose.position.x = $Player.position.x / 2
