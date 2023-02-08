@@ -1,10 +1,15 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/menus/start/Start_Menu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game.tscn" type="PackedScene" id=2]
+[ext_resource path="res://TheLittleTechniker.gd" type="Script" id=3]
 
 [node name="TheLittleTechniker" type="Node2D"]
+script = ExtResource( 3 )
 
 [node name="Game" parent="." instance=ExtResource( 2 )]
+visible = false
 
 [node name="Start_Menu" parent="." instance=ExtResource( 1 )]
+
+[connection signal="game_start" from="Start_Menu" to="." method="_on_Start_Menu_game_start"]

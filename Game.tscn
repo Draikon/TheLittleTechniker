@@ -2,28 +2,27 @@
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Tileset1.tres" type="TileSet" id=2]
-[ext_resource path="res://Camera2D.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/chicken/Chicken.tscn" type="PackedScene" id=4]
 [ext_resource path="res://GameOver.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Game.gd" type="Script" id=6]
 [ext_resource path="res://BarmerBoy.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/coins/Coin.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/background/Background.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 28, 22.5 )
 
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 42, 160.5 )
+
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 1063.38, 93 )
 
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 0.0819446, 0.0833331 )
-
-[node name="Game" type="Node"]
+[node name="Game" type="Node2D"]
 script = ExtResource( 6 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 166, 271 )
-script = ExtResource( 3 )
+position = Vector2( 512, 299 )
 
 [node name="StaticBody2d" type="StaticBody2D" parent="."]
 position = Vector2( 516, 615.5 )
@@ -40,19 +39,17 @@ tile_data = PoolIntArray( 1376273, 1, 2, 1376274, 1, 2, 1441808, 1, 2, 1441809, 
 position = Vector2( 449, 102.5 )
 shape = SubResource( 1 )
 
+[node name="WinZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WinZone"]
+position = Vector2( 1165, 367 )
+shape = SubResource( 4 )
+
 [node name="DeadZone" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeadZone"]
 position = Vector2( 624, 917 )
 shape = SubResource( 3 )
-
-[node name="flower" type="CollisionShape2D" parent="DeadZone"]
-position = Vector2( 904, 520 )
-scale = Vector2( 90, 90 )
-shape = SubResource( 4 )
-
-[node name="Lost" parent="." instance=ExtResource( 5 )]
-visible = false
 
 [node name="Chicken" parent="." instance=ExtResource( 4 )]
 position = Vector2( 516, 242 )
@@ -78,4 +75,18 @@ position = Vector2( 1000, 495 )
 [node name="Coin4" parent="Coins" instance=ExtResource( 8 )]
 position = Vector2( 625, 391 )
 
+[node name="Start_Menu" parent="." instance=ExtResource( 8 )]
+visible = false
+
+[node name="Background" parent="." instance=ExtResource( 8 )]
+position = Vector2( 177, 308 )
+scale = Vector2( 2, 2 )
+z_index = -4
+
+[node name="WinLoose" parent="." instance=ExtResource( 5 )]
+visible = false
+
+[connection signal="body_entered" from="WinZone" to="Player" method="_on_WinZone_body_entered"]
 [connection signal="body_entered" from="DeadZone" to="Player" method="_on_DeadZone_body_entered"]
+[connection signal="player_dies" from="Player" to="." method="_on_Player_player_dies"]
+[connection signal="player_wins" from="Player" to="." method="_on_Player_player_wins"]
