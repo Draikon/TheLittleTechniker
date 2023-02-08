@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Game Boy Advance - Super Mario Advance 4 Super Mario Bros 3 - Tiles.png" type="Texture" id=2]
+[ext_resource path="res://Tileset1.tres" type="TileSet" id=2]
 [ext_resource path="res://Camera2D.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/chicken/Chicken.tscn" type="PackedScene" id=4]
 [ext_resource path="res://GameOver.tscn" type="PackedScene" id=5]
@@ -9,56 +9,13 @@
 [ext_resource path="res://BarmerBoy.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 572.5, 87.5 )
-
-[sub_resource type="TileSet" id=2]
-0/name = "Game Boy Advance - Super Mario Advance 4 Super Mario Bros 3 - Tiles.png 0"
-0/texture = ExtResource( 2 )
-0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 74, -16, 16, 16 )
-0/tile_mode = 1
-0/autotile/bitmask_mode = 0
-0/autotile/bitmask_flags = [  ]
-0/autotile/icon_coordinate = Vector2( 0, 0 )
-0/autotile/tile_size = Vector2( 32, 32 )
-0/autotile/spacing = 0
-0/autotile/occluder_map = [  ]
-0/autotile/navpoly_map = [  ]
-0/autotile/priority_map = [  ]
-0/autotile/z_index_map = [  ]
-0/occluder_offset = Vector2( 0, 0 )
-0/navigation_offset = Vector2( 0, 0 )
-0/shape_offset = Vector2( 0, 0 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape_one_way = false
-0/shape_one_way_margin = 0.0
-0/shapes = [  ]
-0/z_index = 0
-1/name = "Game Boy Advance - Super Mario Advance 4 Super Mario Bros 3 - Tiles.png 1"
-1/texture = ExtResource( 2 )
-1/tex_offset = Vector2( 0, 0 )
-1/modulate = Color( 1, 1, 1, 1 )
-1/region = Rect2( 2, 2, 988, 448 )
-1/tile_mode = 2
-1/autotile/icon_coordinate = Vector2( 0, 0 )
-1/autotile/tile_size = Vector2( 16, 16 )
-1/autotile/spacing = 2
-1/autotile/occluder_map = [  ]
-1/autotile/navpoly_map = [  ]
-1/autotile/priority_map = [  ]
-1/autotile/z_index_map = [  ]
-1/occluder_offset = Vector2( 0, 0 )
-1/navigation_offset = Vector2( 0, 0 )
-1/shape_offset = Vector2( 0, 0 )
-1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-1/shape_one_way = false
-1/shape_one_way_margin = 0.0
-1/shapes = [  ]
-1/z_index = 0
+extents = Vector2( 28, 22.5 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 1063.38, 93 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 0.0819446, 0.0833331 )
 
 [node name="Game" type="Node"]
 script = ExtResource( 6 )
@@ -70,15 +27,17 @@ script = ExtResource( 3 )
 [node name="StaticBody2d" type="StaticBody2D" parent="."]
 position = Vector2( 516, 615.5 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2d"]
-position = Vector2( 47.5, -1 )
-shape = SubResource( 1 )
-
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource( 2 )
+[node name="TileMap" type="TileMap" parent="StaticBody2d"]
+position = Vector2( -516, -615.5 )
+tile_set = ExtResource( 2 )
 cell_size = Vector2( 16, 16 )
+collision_use_parent = true
 format = 1
-tile_data = PoolIntArray( 2162688, 1, 2, 2162689, 1, 2, 2162690, 1, 2, 2162691, 1, 2, 2162692, 1, 2, 2162693, 1, 2, 2162694, 1, 2, 2162695, 1, 2, 2162696, 1, 2, 2162697, 1, 2, 2162698, 1, 2, 2162699, 1, 2, 2162700, 1, 2, 2162701, 1, 2, 2162702, 1, 2, 2162703, 1, 2, 2162704, 1, 2, 2162705, 1, 2, 2162706, 1, 2, 2162707, 1, 2, 2162708, 1, 2, 2162709, 1, 2, 2162710, 1, 2, 2162711, 1, 2, 2162712, 1, 2, 2162713, 1, 2, 2162714, 1, 2, 2162715, 1, 2, 2162716, 1, 2, 2162717, 1, 2, 2162718, 1, 2, 2162719, 1, 2, 2162720, 1, 2, 2162721, 1, 2, 2162722, 1, 2, 2162723, 1, 2, 2162724, 1, 2, 2162725, 1, 2, 2162726, 1, 2, 2162727, 1, 2, 2162728, 1, 2, 2162729, 1, 2, 2162730, 1, 2, 2162731, 1, 2, 2162732, 1, 2, 2162733, 1, 2, 2162734, 1, 2, 2162735, 1, 2, 2162736, 1, 2, 2162737, 1, 2, 2162738, 1, 2, 2162739, 1, 2, 2162740, 1, 2, 2162741, 1, 2, 2162742, 1, 2, 2162743, 1, 2, 2162744, 1, 2, 2162745, 1, 2, 2162746, 1, 2, 2162747, 1, 2, 2162748, 1, 2, 2162749, 1, 2, 2162750, 1, 2, 2162751, 1, 2, 2162752, 1, 2, 2162753, 1, 2, 2162754, 1, 2, 2162755, 1, 2, 2162756, 1, 2, 2162757, 1, 2, 2162758, 1, 2 )
+tile_data = PoolIntArray( 1376273, 1, 2, 1376274, 1, 2, 1441808, 1, 2, 1441809, 1, 2, 1441810, 1, 2, 1507343, 1, 2, 1507344, 1, 2, 1507345, 1, 2, 1572879, 1, 2, 1572880, 1, 2, 1638413, 1, 2, 1638414, 1, 2, 1638415, 1, 2, 1638416, 1, 2, 1703949, 1, 2, 1703950, 1, 2, 1703951, 1, 2, 1703974, 1, 262180, 1703975, 1, 262181, 1769480, 1, 2, 1769481, 1, 2, 1769482, 1, 2, 1769483, 1, 2, 1769484, 1, 2, 1769485, 1, 2, 1769486, 1, 2, 1769510, 1, 327716, 1769511, 1, 327717, 1835021, 1, 2, 1835022, 1, 2, 1835034, 1, 65548, 1835035, 1, 65549, 1900570, 1, 131084, 1900571, 1, 131085, 1966106, 1, 131084, 1966107, 1, 131085, 2031642, 1, 131084, 2031643, 1, 131085, 2097167, 1, 524309, 2097168, 1, 524310, 2097178, 1, 131084, 2097179, 1, 131085, 2097191, 1, 589848, 2097192, 1, 589849, 2097208, 1, 983054, 2097218, 1, 2, 2097219, 1, 2, 2097220, 1, 2, 2097221, 1, 2, 2097222, 1, 2, 2097223, 1, 2, 2097224, 1, 2, 2097225, 1, 2, 2097232, 1, 2, 2097233, 1, 2, 2097234, 1, 2, 2097235, 1, 2, 2097236, 1, 2, 2097239, 1, 2, 2097240, 1, 2, 2097241, 1, 2, 2097242, 1, 2, 2097243, 1, 2, 2097244, 1, 2, 2097245, 1, 2, 2097246, 1, 2, 2097247, 1, 2, 2162688, 1, 2, 2162689, 1, 2, 2162690, 1, 2, 2162691, 1, 2, 2162692, 1, 2, 2162693, 1, 2, 2162694, 1, 2, 2162695, 1, 2, 2162696, 1, 2, 2162697, 1, 2, 2162698, 1, 2, 2162699, 1, 2, 2162700, 1, 2, 2162701, 1, 2, 2162702, 1, 2, 2162703, 1, 2, 2162704, 1, 2, 2162705, 1, 2, 2162706, 1, 2, 2162707, 1, 2, 2162708, 1, 2, 2162709, 1, 2, 2162710, 1, 2, 2162711, 1, 2, 2162712, 1, 2, 2162713, 1, 2, 2162714, 1, 2, 2162715, 1, 2, 2162716, 1, 2, 2162717, 1, 2, 2162718, 1, 2, 2162719, 1, 2, 2162720, 1, 2, 2162721, 1, 2, 2162722, 1, 2, 2162723, 1, 2, 2162724, 1, 2, 2162725, 1, 2, 2162726, 1, 2, 2162727, 1, 2, 2162728, 1, 2, 2162729, 1, 2, 2162730, 1, 2, 2162731, 1, 2, 2162732, 1, 2, 2162733, 1, 2, 2162734, 1, 2, 2162735, 1, 2, 2162736, 1, 2, 2162737, 1, 2, 2162738, 1, 2, 2162739, 1, 2, 2162740, 1, 2, 2162741, 1, 2, 2162742, 1, 2, 2162743, 1, 2, 2162744, 1, 2, 2162745, 1, 2, 2162746, 1, 2, 2162747, 1, 2, 2162748, 1, 2, 2162749, 1, 2, 2162750, 1, 2, 2162751, 1, 2, 2162752, 1, 2, 2162753, 1, 2, 2162754, 1, 2, 2162755, 1, 2, 2162756, 1, 2, 2162757, 1, 2, 2162758, 1, 2, 2162772, 1, 2, 2162773, 1, 2, 2162774, 1, 2, 2162775, 1, 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2d"]
+position = Vector2( 449, 102.5 )
+shape = SubResource( 1 )
 
 [node name="DeadZone" type="Area2D" parent="."]
 
@@ -86,13 +45,19 @@ tile_data = PoolIntArray( 2162688, 1, 2, 2162689, 1, 2, 2162690, 1, 2, 2162691, 
 position = Vector2( 624, 917 )
 shape = SubResource( 3 )
 
+[node name="flower" type="CollisionShape2D" parent="DeadZone"]
+position = Vector2( 904, 520 )
+scale = Vector2( 90, 90 )
+shape = SubResource( 4 )
+
 [node name="Lost" parent="." instance=ExtResource( 5 )]
 visible = false
 
 [node name="Chicken" parent="." instance=ExtResource( 4 )]
+position = Vector2( 516, 242 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 69, 57 )
+position = Vector2( 52, 422 )
 z_index = 1
 
 [node name="BarmerBoy" parent="." instance=ExtResource( 7 )]
