@@ -2,12 +2,12 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/WinningGrove.mp3-e4c313d3f23c92c180dd71e5deffb4f7.mp3str"
+path="res://.import/WinningGrove.mp3-ba8e8f0abc2bbb54dd54316904af61ca.mp3str"
 
 [deps]
 
-source_file="res://audio/WinningGrove.mp3"
-dest_files=[ "res://.import/WinningGrove.mp3-e4c313d3f23c92c180dd71e5deffb4f7.mp3str" ]
+source_file="res://Media/audio/WinningGrove.mp3"
+dest_files=[ "res://.import/WinningGrove.mp3-ba8e8f0abc2bbb54dd54316904af61ca.mp3str" ]
 
 [params]
 
