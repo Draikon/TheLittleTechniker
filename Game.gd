@@ -8,7 +8,6 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Player.connect("player_dies", self, "show_dead_anim")
 	pass # Replace with function body.
 
 
@@ -17,6 +16,6 @@ func _process(delta):
 	$Camera2D.position.x = $Player.position.x
 	#if get_node("Player").
 
-func show_dead_anim():
+func _on_Player_player_dies():
 	$Lost.visible = true
 	$Lost/AudioStreamPlayer.playing = true

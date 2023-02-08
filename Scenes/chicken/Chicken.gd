@@ -1,4 +1,9 @@
-extends RigidBody2D
+extends KinematicBody2D
+
+var gravity = 500
+
+var velocity = Vector2()
+var direction = -1
 
 
 # Declare member variables here. Examples:
@@ -12,14 +17,25 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if $AnimatedSprite.animation == 'move':
-		position.x = position.x -35 * delta
+#func _process(delta):
 #	pass
+
+func _physics_process(delta):
+	velocity.y += gravity * delta
+	velocity.x = 0
+	
+	if is_on_wall():
+		direction = direction * -1
+		$AnimatedSprite.flip_h = not $AnimatedSprite.flip_h
+		
+	if $AnimatedSprite.animation == 'move' and is_on_floor():
+		velocity.x += direction * 1600 * delta
+	
+	velocity = move_and_slide(velocity, Vector2(0, -1))
 
 
 func _on_BehaviorTimer_timeout():
 	if $AnimatedSprite.animation == 'idle':
-		 $AnimatedSprite.animation = 'move'
+		$AnimatedSprite.animation = 'move'
 	elif $AnimatedSprite.animation == 'move':
 		$AnimatedSprite.animation = 'idle'

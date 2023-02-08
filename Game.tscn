@@ -1,11 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game Boy Advance - Super Mario Advance 4 Super Mario Bros 3 - Tiles.png" type="Texture" id=2]
 [ext_resource path="res://Camera2D.gd" type="Script" id=3]
-[ext_resource path="res://Chicken.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Game.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/chicken/Chicken.tscn" type="PackedScene" id=4]
 [ext_resource path="res://GameOver.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Game.gd" type="Script" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 572.5, 87.5 )
@@ -60,15 +60,11 @@ extents = Vector2( 572.5, 87.5 )
 extents = Vector2( 1063.38, 93 )
 
 [node name="Game" type="Node"]
-script = ExtResource( 4 )
+script = ExtResource( 6 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 166, 271 )
 script = ExtResource( 3 )
-
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 69, 57 )
-z_index = 1
 
 [node name="StaticBody2d" type="StaticBody2D" parent="."]
 position = Vector2( 516, 615.5 )
@@ -83,10 +79,6 @@ cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( 2162688, 1, 2, 2162689, 1, 2, 2162690, 1, 2, 2162691, 1, 2, 2162692, 1, 2, 2162693, 1, 2, 2162694, 1, 2, 2162695, 1, 2, 2162696, 1, 2, 2162697, 1, 2, 2162698, 1, 2, 2162699, 1, 2, 2162700, 1, 2, 2162701, 1, 2, 2162702, 1, 2, 2162703, 1, 2, 2162704, 1, 2, 2162705, 1, 2, 2162706, 1, 2, 2162707, 1, 2, 2162708, 1, 2, 2162709, 1, 2, 2162710, 1, 2, 2162711, 1, 2, 2162712, 1, 2, 2162713, 1, 2, 2162714, 1, 2, 2162715, 1, 2, 2162716, 1, 2, 2162717, 1, 2, 2162718, 1, 2, 2162719, 1, 2, 2162720, 1, 2, 2162721, 1, 2, 2162722, 1, 2, 2162723, 1, 2, 2162724, 1, 2, 2162725, 1, 2, 2162726, 1, 2, 2162727, 1, 2, 2162728, 1, 2, 2162729, 1, 2, 2162730, 1, 2, 2162731, 1, 2, 2162732, 1, 2, 2162733, 1, 2, 2162734, 1, 2, 2162735, 1, 2, 2162736, 1, 2, 2162737, 1, 2, 2162738, 1, 2, 2162739, 1, 2, 2162740, 1, 2, 2162741, 1, 2, 2162742, 1, 2, 2162743, 1, 2, 2162744, 1, 2, 2162745, 1, 2, 2162746, 1, 2, 2162747, 1, 2, 2162748, 1, 2, 2162749, 1, 2, 2162750, 1, 2, 2162751, 1, 2, 2162752, 1, 2, 2162753, 1, 2, 2162754, 1, 2, 2162755, 1, 2, 2162756, 1, 2, 2162757, 1, 2, 2162758, 1, 2 )
 
-[node name="Chicken" parent="." instance=ExtResource( 4 )]
-position = Vector2( 319, 434 )
-collision_mask = 3
-
 [node name="DeadZone" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeadZone"]
@@ -96,4 +88,11 @@ shape = SubResource( 3 )
 [node name="Lost" parent="." instance=ExtResource( 5 )]
 visible = false
 
+[node name="Chicken" parent="." instance=ExtResource( 4 )]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 69, 57 )
+z_index = 1
+
 [connection signal="body_entered" from="DeadZone" to="Player" method="_on_DeadZone_body_entered"]
+[connection signal="player_dies" from="Player" to="." method="_on_Player_player_dies"]
