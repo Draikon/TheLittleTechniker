@@ -12,21 +12,6 @@ var gravity = 500
 var velocity = Vector2()
 var direction = -1
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = \"text\"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
 func _physics_process(delta):
 	velocity.y += gravity * delta
 	velocity.x = 0
@@ -95,7 +80,6 @@ animations = [ {
 extents = Vector2( 5, 7.6 )
 
 [node name="Chicken" type="KinematicBody2D"]
-position = Vector2( 469, 234 )
 collision_layer = 4
 collision_mask = 3
 script = SubResource( 13 )
@@ -132,6 +116,5 @@ spread = 44.42
 gravity = Vector2( 0, 200 )
 initial_velocity = 449.55
 initial_velocity_random = 0.55
-color = Color( 0.752941, 0.219608, 0.721569, 1 )
 
 [connection signal="timeout" from="BehaviorTimer" to="." method="_on_BehaviorTimer_timeout"]
