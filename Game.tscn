@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/tiles/TileScene.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://BarmerBoy.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/background/Background.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Spawner.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Media/audio/StrollingRound.mp3" type="AudioStream" id=10]
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 42, 160.5 )
@@ -81,6 +82,7 @@ position = Vector2( 1023, 262 )
 position = Vector2( 466, 484 )
 
 [node name="AudioBackground" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
 
 [node name="CoinLabel" type="Label" parent="."]
 margin_left = 15.0
