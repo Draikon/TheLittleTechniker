@@ -1,4 +1,4 @@
-extends Node
+extends Area2D
 
 
 # Declare member variables here. Examples:
@@ -13,16 +13,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
-#	pass
+	
 
 
-func _on_Start_Menu_game_start():
-	$Start_Menu.hide()
-	$Game.start_game()
-	pass # Replace with function body.
-
-
-func _input(event):
-	if event is InputEventKey and event.pressed:
-		if event.scancode == KEY_ESCAPE:
-			get_tree().quit()
+func _on_Coin_body_entered(_body):
+		hide()
