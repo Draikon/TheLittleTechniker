@@ -1,9 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Media/Images/menu-bg.jpg" type="Texture" id=1]
 [ext_resource path="res://Scenes/menus/start/Start_Menu.gd" type="Script" id=2]
+[ext_resource path="res://Media/Images/cloud3.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/menus/start/Cloud3.gd" type="Script" id=4]
 
 [sub_resource type="ImageTexture" id=1]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 356.252
 
 [node name="Start_Menu" type="Node2D"]
 script = ExtResource( 2 )
@@ -43,5 +48,21 @@ margin_right = 598.0
 margin_bottom = 397.0
 text = "Verlassen"
 
+[node name="Cloud3" type="KinematicBody2D" parent="."]
+position = Vector2( 150, 119 )
+scale = Vector2( 0.103288, 0.103288 )
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cloud3"]
+shape = SubResource( 2 )
+
+[node name="Cloud3" type="Sprite" parent="Cloud3"]
+position = Vector2( 19.3633, 19.3633 )
+texture = ExtResource( 3 )
+
+[node name="Timer" type="Timer" parent="Cloud3"]
+autostart = true
+
 [connection signal="pressed" from="ButtonStart" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="ButtonExit" to="." method="_on_Button_pressed"]
+[connection signal="timeout" from="Cloud3/Timer" to="Cloud3" method="_on_Timer_timeout"]
