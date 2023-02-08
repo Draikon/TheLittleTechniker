@@ -1,8 +1,23 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Media/audio/WinningGrove.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Button.gd" type="Script" id=2]
 [ext_resource path="res://Media/audio/YouLost.mp3" type="AudioStream" id=3]
+[ext_resource path="res://Media/SnesItalic-1G9Be.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=3]
+size = 250
+font_data = ExtResource( 4 )
+
+[sub_resource type="Theme" id=4]
+default_font = SubResource( 3 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 250
+font_data = ExtResource( 4 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
 
 [node name="WinLoose" type="Node2D"]
 
@@ -10,20 +25,20 @@
 
 [node name="YoureDead" type="Label" parent="."]
 visible = false
-margin_left = 9.0
-margin_top = 184.0
-margin_right = 77.0
-margin_bottom = 198.0
-rect_scale = Vector2( 15, 15 )
+margin_left = 227.0
+margin_top = 136.0
+margin_right = 929.0
+margin_bottom = 408.0
+theme = SubResource( 4 )
 text = "YOU LOST!"
 
 [node name="YouWon" type="Label" parent="."]
 visible = false
-margin_left = 9.0
-margin_top = 184.0
-margin_right = 77.0
-margin_bottom = 198.0
-rect_scale = Vector2( 15, 15 )
+margin_left = 200.0
+margin_top = 146.0
+margin_right = 921.0
+margin_bottom = 418.0
+theme = SubResource( 2 )
 text = "YOU WON!"
 uppercase = true
 
