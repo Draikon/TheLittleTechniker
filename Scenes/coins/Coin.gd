@@ -16,7 +16,5 @@ func _ready():
 	
 
 
-func _on_Coin_body_entered(body):
-	print(body.name)
-	if body.name == 'Player':
+func _on_Coin_body_entered(_body):
 		hide()
