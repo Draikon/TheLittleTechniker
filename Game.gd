@@ -17,5 +17,6 @@ func _process(delta):
 	#if get_node("Player").
 
 func _on_Player_player_dies():
+	# todo: reset viewport
 	$Lost.visible = true
 	$Lost/AudioStreamPlayer.playing = true

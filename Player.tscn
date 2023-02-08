@@ -3,8 +3,8 @@
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://hero.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 22.5, 29.25 )
+[sub_resource type="CapsuleShape2D" id=6]
+radius = 21.5
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
@@ -30,7 +30,7 @@ animations = [ {
 } ]
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 543, 359 )
+position = Vector2( 535, 365 )
 collision_layer = 2
 script = ExtResource( 1 )
 __meta__ = {
@@ -39,8 +39,10 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 1.5, 2.25 )
-shape = SubResource( 1 )
+shape = SubResource( 6 )
 
-[node name="Sprite" type="AnimatedSprite" parent="."]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 3.9375, 3.9375 )
 frames = SubResource( 5 )
+frame = 2
+playing = true
