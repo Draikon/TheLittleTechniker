@@ -1,8 +1,20 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Scenes/chicken/rooster-move.png" type="Texture" id=1]
-[ext_resource path="res://Scenes/chicken/rooster-idle.png" type="Texture" id=2]
+[ext_resource path="res://rooster-idle.png" type="Texture" id=1]
+[ext_resource path="res://rooster-move.png" type="Texture" id=2]
 [ext_resource path="res://Chicken.gd" type="Script" id=3]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 2 )
@@ -16,37 +28,26 @@ region = Rect2( 16, 0, 16, 16 )
 atlas = ExtResource( 2 )
 region = Rect2( 32, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 1 )
-region = Rect2( 16, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 1 )
-region = Rect2( 32, 0, 16, 16 )
-
-[sub_resource type="SpriteFrames" id=12]
+[sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
 "name": "move",
 "speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 5, 7.6 )
+extents = Vector2( 5, 7.5 )
 
-[node name="Chicken" type="KinematicBody2D"]
+[node name="RigidBody2D" type="RigidBody2D"]
 position = Vector2( 469, 234 )
-collision_layer = 4
+collision_mask = 0
+mode = 1
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
@@ -54,13 +55,13 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 5, 5 )
-frames = SubResource( 12 )
-animation = "move"
-frame = 2
+frames = SubResource( 4 )
+animation = "idle"
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -6.10352e-05, 2 )
+visible = false
+position = Vector2( -6.10352e-05, 0.5 )
 scale = Vector2( 5, 5 )
 shape = SubResource( 5 )
 
