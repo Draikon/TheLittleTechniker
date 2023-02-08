@@ -11,12 +11,8 @@ config_version=4
 [application]
 
 config/name="The Little Techniker"
-run/main_scene="res://Game.tscn"
+run/main_scene="res://TheLittleTechniker.tscn"
 config/icon="res://icon.png"
-
-[display]
-
-window/size/fullscreen=true
 
 [gui]
 

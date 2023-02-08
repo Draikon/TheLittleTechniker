@@ -18,5 +18,5 @@ func _ready():
 
 func _on_Start_Menu_game_start():
 	$Start_Menu.hide()
-	$Game.show()
+	$Game.start_game()
 	pass # Replace with function body.
